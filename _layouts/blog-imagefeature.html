@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+    {% include head.html %}
+
+    <!-- body
+    ======================================================================== -->
+    <body>
+        <!-- Main wrapper
+        ==================================================================== -->
+        <div id="main-wrapper">
+            <!-- Main container -->
+            <div id="main-container">
+
+                <!-- Back to top button
+                ============================================================ -->
+                <a href="#" id="back-to-top" class="back-to-top" title="Back to top"></a>
+
+                {% include header.html %}
+
+                <!-- Breadcrumb section
+                ============================================================ -->
+                <div class="breadcrumb-section breadcrumb-section-layout-2 parallax-section text-center dark-1-color-bg dark-1-color-border light-color" style="background-image: url({{page.bgimg}});">
+
+                    <!-- overlay -->
+                    <div class="section-overlay dark-1-color-bg" style="opacity: 0.75;"></div>
+
+                    <!-- Breadcrumb container -->
+                    <div class="breadcrumb-section-container">
+                        <!-- container -->
+                        <div class="container gx-4">
+                            <!-- row -->
+                            <div class="row align-items-center justify-content-between">
+
+                                <!-- Title -->
+                                <div class="breadcrumb-title">
+                                    <h1 class="breadcrumb-heading h1 font-weight-600">{{page.quote}} - {{page.quote-author}}</h1>
+                                </div><!-- /End Title -->
+
+                            </div><!-- /End row -->
+                        </div><!-- /End container -->
+                    </div><!-- /End Breadcrumb container -->
+
+                </div><!-- /End Breadcrumb section -->
+
+
+                <!-- Page body
+                ============================================================ -->
+                <div id="page-body" class="page-body page-right-sidebar">
+                    <!-- container -->
+                    <div class="container gx-4">
+                        <!-- row -->
+                        <div class="row main-row justify-content-center">
+
+                            <!-- Content area
+                            ================================================ -->
+                            <div id="primary" class="content-area col-lg-8">
+                                <!-- Main -->
+                                <main id="main" class="content-area-container site-main">
+
+
+                                    <!-- Blog wrapper -->
+                                    <div class="blog-block-wrapper">
+                                        <!-- row -->
+                                        <div class="row gx-36">
+
+
+                                            <!-- Post -->
+                                            <div class="blog-block-post col-lg-12">
+                                                <!-- Post -->
+                                                <article class="main-block blog-block blog-block-inner format-auote">
+                                                    <!-- Block container -->
+                                                    <div class="main-block-container blog-block-container blog-block-inner-container">
+
+                                                        <!-- Block body -->
+                                                        <div class="main-block-body blog-block-body blog-block-inner-body">
+
+                                                            <!-- Block heading -->
+                                                            <div class="main-block-heading blog-block-heading blog-block-inner-heading">
+
+                                                                <ul class="meta-block">
+                                                                    <li class="meta-block-date"><span><a href="#">{{page.date}}</a></span></li>
+                                                                </ul>
+
+                                                            </div><!-- /End Block heading -->
+
+                                                            <!-- Block content -->
+                                                            <div class="main-block-content blog-block-content blog-block-inner-content">
+                                                                {{ content }}
+                                                            </div><!-- /End Block content -->
+
+                                                            <!-- Block footer -->
+                                                            <div class="main-block-footer blog-block-footer blog-block-inner-footer">
+
+                                                                <!-- Author block -->
+                                                                <div class="main-block author-block">
+                                                                    <!-- Block container -->
+                                                                    <div class="main-block-container author-block-container">
+
+                                                                        <!-- Block body -->
+                                                                        <div class="main-block-body author-block-body">
+
+                                                                            <!-- Block heading -->
+                                                                            <div class="main-block-heading author-block-heading section-title-small">
+                                                                                <h6 class="font-weight-500"><span>About the author</span></h6>
+                                                                            </div><!-- /End Block heading -->
+
+                                                                            <!-- Block content -->
+                                                                            <div class="main-block-content author-block-content">
+
+                                                                                <!-- Avatar -->
+                                                                                <div class="avatar">
+                                                                                    <a href="#">
+                                                                                        <img src="assets/images/avatar/gf-60x60.jpg" alt="Avatar" />
+                                                                                    </a>
+                                                                                </div><!-- /End Avatar -->
+
+                                                                                <!-- Bio -->
+                                                                                <div class="bio">
+
+                                                                                    <h5><a href="#">About Glenn Stephens</a></h5>
+
+                                                                                    <p>Glenn is a Technologist, Speaker, Musical Comedian, Author and endurance coach. Being a multi-instrumentalist, Glenn can play the bagpipes but chooses not to.</p>
+
+                                                                                    <!-- Social networks -->
+                                                                                    <div class="social-networks social-networks-xs social-networks-layout-2">
+                                                                                        <ul>
+                                                                                            <li>
+                                                                                                <a href="#" title="Twitter">
+                                                                                                    <i class="fab fa-twitter"></i>
+                                                                                                    <i class="fab fa-twitter"></i>
+                                                                                                </a>
+                                                                                            </li>
+
+                                                                                            <li>
+                                                                                                <a href="#" title="LinkedIn">
+                                                                                                    <i class="fab fa-linkedin"></i>
+                                                                                                    <i class="fab fa-linkedin"></i>
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div><!-- /End Social networks -->
+
+                                                                                </div><!-- /End Bio -->
+
+                                                                            </div><!-- /End Block content -->
+
+                                                                        </div><!--/End Block body -->
+
+                                                                    </div><!-- /End Block container -->
+                                                                </div><!-- /End Author block -->
+                                                                
+                                                            </div><!-- /End Block footer -->
+
+                                                        </div><!--/End Block body -->
+
+                                                    </div><!-- /End Block container -->
+                                                </article><!-- /End Post -->
+                                            </div><!-- /End Post -->
+
+
+                                        </div><!-- /End row -->
+                                    </div><!-- /End Blog wrapper -->
+
+
+                                </main><!-- /End Main -->
+                            </div><!-- /End Content area -->
+
+
+                            <!-- Widget area (Sidebar)
+                            ================================================ -->
+                            <aside id="secondary" class="widget-area col-lg-4">
+                                <!-- Sidebar container -->
+                                <div class="widget-area-container">
+
+                                    <!-- Tags Cloud -->
+                                    <div class="widget widget_tag_cloud">
+
+                                        <h6 class="widget-title font-weight-500"><span>Tags cloud</span></h6>
+
+                                        <div class="tagcloud">
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="btn btn-xs btn-outline btn-1px-border btn-secondary font-weight-600">MODERN</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-xs btn-outline btn-1px-border btn-secondary font-weight-600">GALLERY</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="btn btn-xs btn-outline btn-1px-border btn-secondary font-weight-600">LINK</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div><!-- /End Tags Cloud -->
+
+
+                                </div><!-- /End Sidebar container -->
+                            </aside><!-- /End Widget area (Sidebar) -->
+
+
+                        </div><!-- /End row -->
+                    </div><!-- /End container -->
+                </div><!-- /End Page body -->
+
+                {% include footer.html %}
+
+            </div><!-- /End Main container -->
+        </div><!-- /End Main wrapper -->
+
+        {% include jsendfiles.html %}
+
+    </body><!-- /End body -->
+</html><!-- /End html -->

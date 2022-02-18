@@ -1,0 +1,13 @@
+- name: Personal Introduction
+  link: /assets/mp3/PersonalIntro.mp3
+  desc: An example of my style, creative diversions and a small example of production capabilities 
+- name: Live Read
+  link: /assets/mp3/LiveRead.mp3
+  desc: An example of a ficticous read for Harvey Norman. Giving an example of a live read as well as writing copy 
+- name: Music Passion
+  link: /assets/mp3/MusicPassion.mp3
+  desc: Introducing a song in a fun and light way
+- name: Creative Song Hook
+  link: /assets/mp3/CreativeSongHook.mp3
+  desc: The staple of song introduction and trying to keep the listener tuned in
+
