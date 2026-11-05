@@ -17,7 +17,13 @@ Achievements:
 - WTF Taekwon-do Black Belt (1st Dan).
 - ITF Taekwondo Black Belt (2nd Dan)
 - [Solo Rottnest Channel Swim](https://medium.com/@glennstephens_98130/how-to-swim-a-really-really-really-long-distance-3c2fd86ea51c) (20 km). 7:07:20
-- Level 2 Advanced Recreational Running Coach. Accredited by Athletics Australia
+- Level 2 Advanced Recreational Running Coach. Level 3 Performance Coach. Accredited by Athletics Australia
+
+## Coaching
+
+Glenn is currently coaching a small swim squad tackling open-water swims. Glenn has advised endurance athletes of all types learn how to adapt their bodies for endurance events. This includes long distance running, swimming, as well mult-day walking events. 
+
+If you are in the need for a coach, please reach out.
 
 ### What's the next challenge?
 

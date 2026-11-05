@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glenn Stephens</title>
+<meta name="description" content="Glenn Stephens: technologist, speaker, author, musician and endurance coach based in Brisbane, Australia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a one-page CV with a sense of humour. Big name and a list of hats, then evidence, section by section. */
+:root {
+  --bg: #f4f6f3;
+  --surface: #ffffff;
+  --fg: #16292d;
+  --muted: #526569;
+  --line: #d5dcd8;
+  --accent: #0d6670;
+  --mark: #e0a11f;
+  --band: #123a40;
+  --band-fg: #f1f5f2;
+  --band-muted: #b5c9c8;
+  --band-line: #2f5a5f;
+  --band-link: #f2c25c;
+  --swim: #0d6670;
+  --bike: #4f9aa0;
+  --run: #e0a11f;
+  --display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --gutter: 24px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101d20; --surface: #17282c; --fg: #e9efec; --muted: #a3b5b5; --line: #2c4146;
+    --accent: #6cc6cd; --mark: #eeb643; --band: #0b2f35; --band-fg: #eef3f0; --band-muted: #a9c0c0;
+    --band-line: #2a5157; --band-link: #f2c25c; --swim: #6cc6cd; --bike: #3b8a91; --run: #eeb643;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101d20; --surface: #17282c; --fg: #e9efec; --muted: #a3b5b5; --line: #2c4146;
+  --accent: #6cc6cd; --mark: #eeb643; --band: #0b2f35; --band-fg: #eef3f0; --band-muted: #a9c0c0;
+  --band-line: #2a5157; --band-link: #f2c25c; --swim: #6cc6cd; --bike: #3b8a91; --run: #eeb643;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 1.0625rem/1.6 var(--body);
+  -webkit-text-size-adjust: 100%;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+}
+h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.08; text-wrap: balance; }
+a { color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--mark); outline-offset: 3px; border-radius: 2px; }
+img { display: block; max-width: 100%; }
+
+.wrap {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+
+/* Header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 60px; }
+.brand { font: 700 1.125rem/1 var(--display); color: var(--fg); text-decoration: none; white-space: nowrap; }
+.nav { display: flex; gap: 24px; overflow-x: auto; min-width: 0; scrollbar-width: none; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 0.9375rem; padding-block: 8px; white-space: nowrap; }
+.nav a:hover { color: var(--fg); }
+
+/* Hero */
+.hero .wrap {
+  display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 56px; align-items: end;
+  padding-block: 72px 64px;
+}
+.place { font: 500 0.8125rem/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.hero h1 {
+  font-size: clamp(3.5rem, 11vw, 7.75rem);
+  font-weight: 800; letter-spacing: -0.035em; line-height: 0.92;
+  padding-block: 20px 28px;
+}
+.lede { font-size: 1.3125rem; line-height: 1.45; max-width: 31em; }
+.hats { border-top: 2px solid var(--fg); }
+.hats li {
+  font: 700 clamp(1.25rem, 2.2vw, 1.5rem)/1.2 var(--display);
+  padding-block: 11px;
+  border-bottom: 1px solid var(--line);
+}
+.hats li.no { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 16px; }
+.hats s { text-decoration: line-through; text-decoration-color: var(--mark); text-decoration-thickness: 3px; color: var(--muted); }
+.hats small { font: 400 0.875rem/1.3 var(--body); color: var(--muted); }
+
+/* Sections */
+section { padding-block: 72px; scroll-margin-top: 60px; }
+section + section { border-top: 1px solid var(--line); }
+.section-head { display: grid; gap: 12px; max-width: 42em; padding-bottom: 40px; }
+.section-head h2 { font-size: clamp(2.125rem, 4.5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; }
+.section-head p { color: var(--muted); font-size: 1.125rem; }
+
+/* Strengths */
+.strengths li {
+  display: grid; grid-template-columns: 220px minmax(0, 1fr) 120px;
+  gap: 8px 32px; align-items: baseline;
+  padding-block: 24px;
+  border-top: 1px solid var(--line);
+}
+.strengths li:last-child { border-bottom: 1px solid var(--line); }
+.strengths h3 { font-size: 2rem; font-weight: 700; letter-spacing: -0.015em; color: var(--accent); }
+.strengths p { max-width: 42em; }
+.strengths a { justify-self: end; font-weight: 500; font-size: 0.9375rem; white-space: nowrap; }
+
+/* Work */
+.work li {
+  display: grid; grid-template-columns: 300px minmax(0, 1fr);
+  gap: 8px 32px;
+  padding-block: 28px;
+  border-top: 1px solid var(--line);
+}
+.work h3 { font-size: 1.5rem; font-weight: 700; }
+.work .role { color: var(--muted); font-size: 0.9375rem; padding-top: 6px; }
+.work .detail { display: grid; gap: 12px; max-width: 42em; }
+
+/* Writing */
+.shelf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.shelf > div { min-width: 0; }
+.shelf h3 {
+  font: 500 0.8125rem/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); padding-bottom: 12px; border-bottom: 2px solid var(--fg);
+}
+.shelf li { padding-block: 14px; border-bottom: 1px solid var(--line); }
+.shelf li b { display: block; font-weight: 600; line-height: 1.35; }
+.shelf li span { display: block; color: var(--muted); font-size: 0.9375rem; padding-top: 2px; }
+
+/* Music band */
+#music { background: var(--band); color: var(--band-fg); border-top: 0; }
+#music + section { border-top: 0; }
+#music a { color: var(--band-link); }
+#music .section-head p { color: var(--band-muted); }
+.music-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 56px; align-items: start; }
+.music-bio { display: grid; gap: 16px; }
+.pull { font: 700 clamp(1.5rem, 3vw, 2rem)/1.15 var(--display); padding-top: 8px; }
+.pull cite { display: block; font: 400 0.9375rem/1.4 var(--body); color: var(--band-muted); padding-top: 8px; }
+.notes-title {
+  font: 500 0.8125rem/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--band-muted); padding-bottom: 12px; border-bottom: 2px solid var(--band-fg);
+}
+.credit { display: flex; gap: 20px; align-items: flex-start; padding-block: 20px; border-bottom: 1px solid var(--band-line); }
+.credit figure { flex: 0 0 96px; }
+.credit img { width: 96px; height: 96px; object-fit: cover; border-radius: 3px; }
+.credit > div { min-width: 0; display: grid; gap: 4px; }
+.credit h3 { font-size: 1.3125rem; font-weight: 700; line-height: 1.2; }
+.credit p { color: var(--band-muted); font-size: 0.9375rem; }
+.stage { padding-top: 24px; display: grid; gap: 10px; }
+.stage img { width: 100%; height: auto; border-radius: 3px; }
+.stage figcaption { color: var(--band-muted); font-size: 0.9375rem; }
+
+/* Endurance */
+.race { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 28px; display: grid; gap: 20px; }
+.race-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; }
+.race-head h3 { font-size: 1.5rem; font-weight: 700; }
+.total { font: 500 clamp(1.75rem, 5vw, 2.5rem)/1 var(--mono); font-variant-numeric: tabular-nums; }
+.splits { display: flex; height: 22px; gap: 2px; border-radius: 3px; overflow: hidden; }
+.splits i { display: block; min-width: 0; }
+.legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.legend dt { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.9375rem; }
+.legend dt i { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.legend dd { font: 500 1.0625rem/1.4 var(--mono); font-variant-numeric: tabular-nums; }
+.feats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; padding-top: 24px; }
+.feats li { padding-block: 18px; border-bottom: 1px solid var(--line); display: grid; gap: 2px; align-content: start; }
+.feats b { font-weight: 600; }
+.feats span { color: var(--muted); font-size: 0.9375rem; }
+
+/* Footer */
+.foot { border-top: 1px solid var(--line); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px 32px; padding-block: 40px; }
+.foot h2 { font-size: 1.625rem; font-weight: 700; }
+.foot ul { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.foot a { font-weight: 500; }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 48px; }
+  .strengths li { grid-template-columns: minmax(0, 1fr); }
+  .strengths a { justify-self: start; }
+  .work li { grid-template-columns: minmax(0, 1fr); }
+  .shelf { grid-template-columns: minmax(0, 1fr); }
+  .music-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  section { padding-block: 56px; }
+}
+@media (max-width: 560px) {
+  :root { --gutter: 16px; }
+  .top .wrap { flex-direction: column; align-items: flex-start; gap: 0; padding-block: 10px 2px; }
+  .nav { max-width: 100%; gap: 20px; }
+  section { scroll-margin-top: 92px; }
+  .feats { grid-template-columns: minmax(0, 1fr); }
+  .race { padding: 20px; }
+  .legend { gap: 10px; }
+  .legend dd { font-size: 0.9375rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Glenn Stephens</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#strengths">Strengths</a>
+      <a href="#work">Work</a>
+      <a href="#writing">Writing</a>
+      <a href="#music">Music</a>
+      <a href="#endurance">Endurance</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="place">Brisbane, Australia</p>
+        <h1>Glenn Stephens</h1>
+        <p class="lede">My background covers computer science, business management, performance, and psychology, among other fields. I look at challenges from different angles and often notice issues that others might overlook. By combining insights from psychology, economics, business, and technology, I can help your business make better decisions and achieve positive results.</p>
+      </div>
+      <ul class="hats" aria-label="What I do">
+        <li>Technologist</li>
+        <li>Speaker</li>
+        <li>Author</li>
+        <li>Musician &amp; Composer</li>
+        <li>Endurance coach</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="strengths">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What I'm good at</h2>
+        <p>Five things that show up in everything I do, at work and away from it.</p>
+      </div>
+      <ul class="strengths">
+        <li>
+          <h3>Building</h3>
+          <p>I enjoy and take pride in making products in all forms. I founded Orchard ebusiness, launched the low-code workflow tool Monarch BPM, and led the team behind an e-commerce product of the year on Channel Nine's Small Business Show. With a focus on design principles and cognitive psychology principles I aim to hone the customer experience.</p>
+          <a href="#work">Work</a>
+        </li>
+        <li>
+          <h3>Leading</h3>
+          <p>I've worked as a programmer, solution architect, development manager, CEO and managing director, leading teams across high-end security, e-health and finance.</p>
+          <a href="#work">Work</a>
+        </li>
+        <li>
+          <h3>Explaining</h3>
+          <p>I turn hard technical subjects into content others can understand through, books, articles and talks.</p>
+          <a href="#writing">Writing</a>
+        </li>
+        <li>
+          <h3>Performing</h3>
+          <p>I'm at home in front of a room, whether that's a technical talk or a performance in front of hundreds of people.</p>
+          <a href="#music">Music</a>
+        </li>
+        <li>
+          <h3>Enduring</h3>
+          <p>I finish and help others train for long sporting events: I've personally completed an Ironman triathlon, a 20 km solo Rottnest Channel Swim. I also coach runners, with accreditation from Athletics Australia.</p>
+          <a href="#endurance">Endurance</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Where I've worked</h2>
+        <p>I started coding in the 80s and I've worn most of the hats a software company has.</p>
+      </div>
+      <ul class="work">
+        <li>
+          <div>
+            <h3>Microsoft</h3>
+            <p class="role">Senior Content Developer, Senior Technical Program Manager, Senior Content Manager</p>
+          </div>
+          <div class="detail">
+            <p>I worked with teams across the company on <a href="https://microsoft.com/learn">Microsoft Learn</a> and Azure Core, helping people learn new skills and being one of the Responsible AI Champions within Azure Core.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Orchard ebusiness Pty Ltd</h3>
+            <p class="role">Founder</p>
+          </div>
+          <div class="detail">
+            <p>I started Orchard to make quality software for small to medium sized businesses. Our first product, Monarch BPM, was a low-code workflow tool for building user-centric processes. It went on to run processes for real estate head offices, national associations and suicide prevention initiatives in Brisbane.</p>
+            <p>Orchard has since moved its focus to intelligent software for the consumer health market.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Xamarin</h3>
+            <p class="role">Cross-platform mobile development</p>
+          </div>
+          <div class="detail">
+            <p>I worked at Xamarin, the company behind cross-platform mobile development in C#, and I've spent years designing and building iOS and Android apps.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Earlier roles</h3>
+            <p class="role">Developer to CEO</p>
+          </div>
+          <div class="detail">
+            <p>I've led teams in high-end security, e-health and finance as a developer, solutions architect and product manager. Along the way I received a special award for Outstanding Performance as an Architect at the Commonwealth Bank.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="writing">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Writing and speaking</h2>
+        <p>I've written for numerous technical publications, reviewed other people's books and presented to developer communities.</p>
+      </div>
+      <div class="shelf">
+        <div>
+          <h3>Author</h3>
+          <ul>
+            <li><b>Tomes of Kylix: The Linux API</b><span>Published in <a href="https://www.amazon.com.au/Tomes-Kylix-Linux-Api/dp/1556228236">English</a> and <a href="https://www.amazon.de/-/en/Glenn-Stephens/dp/3935042124/">German</a></span></li>
+            <li><b>Technical articles</b><span>Enterprise application integration, app servers, design patterns and performant web applications</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Technical reviewer</h3>
+          <ul>
+            <li><b><a href="https://www.amazon.com.au/NET-MAUI-Cross-Platform-Application-Development-ebook/dp/B0BJ7F4VD4">Modern Cross-Platform Application Development with .NET MAUI (First Edition)</a></b><span>Developing Mobile Development using the .NET MAUI framework</span></li>
+            <li><b><a href="https://link.springer.com/book/10.1007/978-1-4842-4030-4">Building Xamarin.Forms Mobile Apps Using XAML</a></b><span>Mobile cross-platform XAML and Xamarin.Forms fundamentals</span></li>
+            <li><b><a href="https://www.amazon.com/clp/1849510709?lv=shuf&channelId=500">YUI 2.8: Learning the Library</a></b><span>Dynamic JavaScript applications with Yahoo!'s free library</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Endurance Sport Book Publishing</h3>
+          <ul>
+            <li><b>Owner of YayTrain media</b></li>
+            <li><b>5K, 10K, Half Marathon, and Marathon title coming soon</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="music">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Music is life</h2>
+        <p>While I consider myself a composer, most people know me as a pianist and keyboard player. I have frequently performed as a musician for live shows and as a solo artist rocking out piano bar performances.</p>
+      </div>
+      <div class="music-grid">
+        <div class="music-bio">
+          <p>I studied composition at the University of New England under <a href="https://www.australianmusiccentre.com.au/artist/ghandar-ann">Ann Ghandar</a>, and I enjoy bringing pieces of different styles together.</p>
+          <p>I play piano, guitar, bass, saxophone, flute and a few others. My style is mostly pop-rock piano, with Stevie Wonder, Ben Folds, The Darkness, Hoodoo Gurus and Jacob Collier as my main influences.</p>
+          <blockquote class="pull">“You rock.”<cite>Anthony Snape</cite></blockquote>
+          <blockquote class="pull"><small>“Glenn has that true talent as a musical comedian of being good enough to perform entirely as a musician or without his instrument in his hands at all. He creates songs that exist as earworms without the hilarious lyrics and punches out one-liners that would make Tim Vine blush. He's a true talent with an understated style that makes you double-take at some of the things he has to say.”</small><cite>Weekend Notes</cite></blockquote>
+          <blockquote class="pull">“Oh! he is fabulous.”<cite>Amanda (Sandgate, 2020)</cite></blockquote>
+        </div>
+        <div>
+          <p class="notes-title">Selected credits</p>
+          <div class="credit">
+            <figure><img src="assets/images/mexico.jpeg" alt="Mexico album cover by Allan Caswell" onerror="this.parentNode.remove()"></figure>
+            <div>
+              <h3>Knowing That You're There</h3>
+              <p>Track 4 on <a href="https://allancaswell.com/music/mexico-2">Mexico</a> by Allan Caswell, winner of eight Golden Guitars. Reached #15 on the Australian Country Tracks Chart, August 2018.</p>
+            </div>
+          </div>
+          <div class="credit">
+            <figure><img src="assets/images/acousticsunday.jpeg" alt="Acoustic Sunday album cover by Anthony Snape" onerror="this.parentNode.remove()"></figure>
+            <div>
+              <h3>Still Not Over You</h3>
+              <p>Written with <a href="https://anthonysnape.com/music">Anthony Snape</a>. Track 3 on Acoustic Sunday, and also on Live at the Vintage.</p>
+            </div>
+          </div>
+          <div class="credit">
+            <div>
+              <h3>Rock of Ages, 2019 Queensland tour</h3>
+              <p>I took a week's holiday to play keyboards for the a tour of the musical in Caloundra, Noosa and Rockhampton.</p>
+            </div>
+          </div>
+          <figure class="stage">
+            <img src="assets/images/rockofages.jpeg" alt="Cast and crew of the 2019 Rock of Ages musical" onerror="this.parentNode.remove()">
+            <figcaption>Cast and crew of the 2019 Rock of Ages Queensland tour.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="endurance">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Sport</h2>
+        <p>Every five to ten years I take on a new challenge. These are the ones I'm proudest of.</p>
+      </div>
+      <div class="race">
+        <div class="race-head">
+          <h3>Ironman Triathlon, Forster 1995</h3>
+          <p class="total">11:35:58</p>
+        </div>
+        <div class="splits" role="img" aria-label="Bar showing the race split by time: swim 1:12:15, cycle 6:07:30, run 4:16:13">
+          <i style="flex: 4335; background: var(--swim)"></i>
+          <i style="flex: 22050; background: var(--bike)"></i>
+          <i style="flex: 15373; background: var(--run)"></i>
+        </div>
+        <dl class="legend">
+          <div><dt><i style="background: var(--swim)"></i>Swim</dt><dd>1:12:15</dd></div>
+          <div><dt><i style="background: var(--bike)"></i>Cycle</dt><dd>6:07:30</dd></div>
+          <div><dt><i style="background: var(--run)"></i>Run</dt><dd>4:16:13</dd></div>
+        </dl>
+      </div>
+      <ul class="feats">
+        <li><b>Solo Rottnest Channel Swim</b><span>20 km in 7:07:20. <a href="https://medium.com/@glennstephens_98130/how-to-swim-a-really-really-really-long-distance-3c2fd86ea51c">How to swim a really, really, really long distance</a></span></li>
+        <li><b>Level 2 Advanced Recreational Running Coach</b><span>Accredited by Athletics Australia</span></li>
+        <li><b>Level 3 Performance Coach</b><span>Accredited by Athletics Australia</span></li>
+        <li><b>ITF Taekwon-do black belt</b><span>2nd Dan</span></li>
+        <li><b>WTF Taekwondo black belt</b><span>1st Dan</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <h2><a href="mailto:hi@glennstephens.com">Let's talk</a></h2>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/glennthomasstephens/">LinkedIn</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
